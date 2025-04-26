@@ -1,4 +1,3 @@
-```markdown
 # BandWiki.AI - AC/DC QA API
 
 A **FastAPI** service for **retrieval-augmented question answering (RAG)** about the band **AC/DC**, powered by **ChromaDB**, **HuggingFace Embeddings**, and **OpenRouter Gemini** models.
