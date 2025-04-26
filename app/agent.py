@@ -2,11 +2,11 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import create_tool_calling_agent, AgentExecutor
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from .config import LLM_MODEL, OPENAI_API_KEY, OPENAI_API_BASE, TEMPERATURE
-from .tools import get_acdc_information_tool
+from .tools import get_band_information_tool
 from prompts import qa_prompt
 
 def build_agent(retriever, get_session_history):
-    tool_fn = get_acdc_information_tool(retriever)
+    tool_fn = get_band_information_tool(retriever)
     tools = [tool_fn]
 
     llm = ChatOpenAI(
@@ -17,7 +17,7 @@ def build_agent(retriever, get_session_history):
     )
 
     agent = create_tool_calling_agent(llm, tools, qa_prompt)
-    executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+    executor = AgentExecutor(agent=agent, tools=tools, verbose=True, return_intermediate_steps=True)
 
     memory = RunnableWithMessageHistory(
         executor,

@@ -1,14 +1,14 @@
 from langchain.tools import tool
 
 
-def get_acdc_information_tool(retriever):
+def get_band_information_tool(retriever):
     """
-    Create a MANUAL tool that fetches AC/DC-related context from Chroma and outputs a dict.
+    Create a MANUAL tool that fetches Band-related context from Chroma and outputs a dict.
     """
 
     @tool
-    def get_acdc_information(query: str) -> dict:
-        """Retrieve relevant passages about AC/DC (songs, albums, history, members, etc)."""
+    def get_band_information(query: str) -> dict:
+        """Retrieve relevant passages about Bands (songs, albums, history, members, etc)."""
         docs = retriever.invoke(query)
         if not docs:
             return {"context": "No information found related to your query."}
@@ -18,4 +18,4 @@ def get_acdc_information_tool(retriever):
 
         return {"context": snippet_text}
 
-    return get_acdc_information
+    return get_band_information
