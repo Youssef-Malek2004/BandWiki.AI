@@ -1,0 +1,28 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment variables
+.env
+*.env
+
+# Ignore Chroma/Vectorstore persisted folders
+chroma_db/
+db/
+*.chroma/
+*.db/
+
+# Ignore FastAPI/uvicorn logs (if any)
+*.log
+
+# Ignore IDE settings (optional but useful)
+.vscode/
+.idea/
+
+# Ignore Jupyter Notebook checkpoints if you use notebooks
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+.venv/
+env/
+venv/
