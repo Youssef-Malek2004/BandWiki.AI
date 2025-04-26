@@ -1,5 +1,3 @@
-Of course! Here's **everything cleaned up into a single full `README.md` file**, ready for you to paste directly:
-
 ```markdown
 # BandWiki.AI - AC/DC QA API
 
