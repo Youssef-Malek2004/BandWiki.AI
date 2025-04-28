@@ -11,4 +11,4 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
 EMBEDDING_MODEL = "intfloat/e5-large-v2"
 LLM_MODEL = "google/gemini-2.0-flash-001"
-TEMPERATURE = 0.2
+TEMPERATURE = 0.8
